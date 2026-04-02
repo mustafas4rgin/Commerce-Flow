@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "CommerceFlow.Services.Auth.Domain/1.0.0": {
+        "dependencies": {
+          "building-blocks": "1.0.0"
+        },
+        "runtime": {
+          "CommerceFlow.Services.Auth.Domain.dll": {}
+        }
+      },
+      "building-blocks/1.0.0": {
+        "runtime": {
+          "building-blocks.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommerceFlow.Services.Auth.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "building-blocks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

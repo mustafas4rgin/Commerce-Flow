@@ -1,0 +1,15 @@
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.deps.json
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/bin/Debug/net9.0/building-blocks.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/bin/Debug/net9.0/building-blocks.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/CommerceFlow.Services.Auth.Domain.csproj.AssemblyReference.cache
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/CommerceFlow.Services.Auth.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/CommerceFlow.Services.Auth.Domain.AssemblyInfoInputs.cache
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/CommerceFlow.Services.Auth.Domain.AssemblyInfo.cs
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/CommerceFlow.Services.Auth.Domain.csproj.CoreCompileInputs.cache
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/Commerce.89EDBC58.Up2Date
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/CommerceFlow.Services.Auth.Domain.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/refint/CommerceFlow.Services.Auth.Domain.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/CommerceFlow.Services.Auth.Domain.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/Debug/net9.0/ref/CommerceFlow.Services.Auth.Domain.dll
