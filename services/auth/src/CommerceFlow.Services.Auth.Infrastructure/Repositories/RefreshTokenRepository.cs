@@ -18,10 +18,27 @@ public IQueryable<RefreshToken> GetRefreshTokens(CancellationToken ct = default)
 => _context.Set<RefreshToken>().AsNoTracking();
 public async Task<RefreshToken?> GetRefreshTokenByTokenAsync(string token, CancellationToken ct = default)
 => await _context.Set<RefreshToken>().FirstOrDefaultAsync(rt => rt.Token == token, ct);
-public void UpdateRefreshToken(RefreshToken refreshToken, CancellationToken ct = default)
-=> _context.Set<RefreshToken>().Update(refreshToken);
-public async Task AddRefreshTokenAsync(RefreshToken refreshToken, CancellationToken ct = default)
-=> await _context.Set<RefreshToken>().AddAsync(refreshToken, ct);
+public async Task<RefreshToken?> UpdateRefreshTokenAsync(RefreshToken refreshToken, CancellationToken ct = default)
+    {
+        if (refreshToken is null) return null;
+
+        var existingRefreshToken = await _context.Set<RefreshToken>().FindAsync(refreshToken.Id, ct);
+
+        if (existingRefreshToken is null) return null;
+
+        _context.Set<RefreshToken>().Update(refreshToken);
+
+        refreshToken.UpdatedAt = DateTime.UtcNow;
+
+        return refreshToken;
+    }
+public async Task<RefreshToken?> AddRefreshTokenAsync(RefreshToken refreshToken, CancellationToken ct = default)
+    {
+        if (refreshToken is null) return null;
+
+        await _context.Set<RefreshToken>().AddAsync(refreshToken, ct);
+        return refreshToken;
+    }
 public void DeleteRefreshToken(RefreshToken refreshToken, CancellationToken ct = default)
 => _context.Set<RefreshToken>().Remove(refreshToken);
 public async Task<RefreshToken?> GetRefreshTokenByUserIdAsync(int userId, CancellationToken ct = default)

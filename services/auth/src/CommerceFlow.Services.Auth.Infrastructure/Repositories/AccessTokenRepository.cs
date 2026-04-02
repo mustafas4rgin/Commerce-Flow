@@ -18,10 +18,26 @@ public class AccessTokenRepository : IAccessTokenRepository
     => _context.Set<AccessToken>().AsNoTracking();
     public async Task<AccessToken?> GetAccessTokenByTokenAsync(string token, CancellationToken ct = default)
     => await _context.Set<AccessToken>().AsNoTracking().FirstOrDefaultAsync(at => at.Token == token, ct);
-    public void UpdateAccessToken(AccessToken accessToken, CancellationToken ct = default)
-    => _context.Set<AccessToken>().Update(accessToken);
-    public async Task AddAccessTokenAsync(AccessToken accessToken, CancellationToken ct = default)
-    => await _context.Set<AccessToken>().AddAsync(accessToken, ct);
+    public async Task<AccessToken?> UpdateAccessTokenAsync(AccessToken accessToken, CancellationToken ct = default)
+    {
+        if (accessToken is null) return null;
+        
+        var existingAccessToken = await _context.Set<AccessToken>().FindAsync(accessToken.Id, ct);
+        if (existingAccessToken is null) return null;
+
+        _context.Set<AccessToken>().Update(accessToken);
+
+        accessToken.UpdatedAt = DateTime.UtcNow;
+
+        return accessToken;
+    }
+    public async Task<AccessToken?> AddAccessTokenAsync(AccessToken accessToken, CancellationToken ct = default)
+    {
+        if (accessToken is null) return null;
+
+        await _context.Set<AccessToken>().AddAsync(accessToken, ct);
+        return accessToken;
+    }
     public void DeleteAccessToken(AccessToken accessToken, CancellationToken ct = default)
     => _context.Set<AccessToken>().Remove(accessToken);
     public async Task<AccessToken?> GetAccessTokenByUserIdAsync(int userId, CancellationToken ct = default)
