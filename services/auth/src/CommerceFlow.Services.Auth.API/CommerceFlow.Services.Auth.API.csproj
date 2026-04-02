@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="../CommerceFlow.Services.Auth.Application/CommerceFlow.Services.Auth.Application.csproj" />
     <ProjectReference Include="../CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj" />
+    <ProjectReference Include="../CommerceFlow.Services.Auth.Infrastructure/CommerceFlow.Services.Auth.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
