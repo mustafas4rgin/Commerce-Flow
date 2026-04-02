@@ -881,6 +881,9 @@
       "building-blocks/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.0"
+        },
         "compile": {
           "bin/placeholder/building-blocks.dll": {}
         },

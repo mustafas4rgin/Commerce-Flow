@@ -1,5 +1,5 @@
 using CommerceFlow.Services.Auth.Domain.Entities;
-using CommerceFlow.Services.Auth.Infrastructure.Configurations;
+using CommerceFlow.Shared.BuildingBlocks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,11 +1,6 @@
-/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/bin/Debug/net9.0/building-blocks.deps.json
-/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/bin/Debug/net9.0/building-blocks.dll
-/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/bin/Debug/net9.0/building-blocks.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.csproj.AssemblyReference.cache
 /Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.GeneratedMSBuildEditorConfig.editorconfig
 /Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.AssemblyInfoInputs.cache
 /Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.AssemblyInfo.cs
 /Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.csproj.CoreCompileInputs.cache
-/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.dll
-/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/refint/building-blocks.dll
-/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.pdb
-/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/ref/building-blocks.dll
+/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/obj/Debug/net9.0/building-blocks.sourcelink.json
