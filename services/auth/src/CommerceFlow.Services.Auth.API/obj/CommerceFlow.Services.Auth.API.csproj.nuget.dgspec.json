@@ -25,7 +25,14 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/CommerceFlow.Services.Auth.Application.csproj": {
+                "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/CommerceFlow.Services.Auth.Application.csproj"
+              },
+              "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj": {
+                "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -68,6 +75,211 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/CommerceFlow.Services.Auth.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/CommerceFlow.Services.Auth.Application.csproj",
+        "projectName": "CommerceFlow.Services.Auth.Application",
+        "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/CommerceFlow.Services.Auth.Application.csproj",
+        "packagesPath": "/Users/s4rgin/.nuget/packages/",
+        "outputPath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/s4rgin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj": {
+                "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[16.1.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj",
+        "projectName": "CommerceFlow.Services.Auth.Domain",
+        "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj",
+        "packagesPath": "/Users/s4rgin/.nuget/packages/",
+        "outputPath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/s4rgin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj": {
+                "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj",
+        "projectName": "CommerceFlow.Shared.BuildingBlocks",
+        "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj",
+        "packagesPath": "/Users/s4rgin/.nuget/packages/",
+        "outputPath": "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/s4rgin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

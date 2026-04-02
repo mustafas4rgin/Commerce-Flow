@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "coS+Cu/rg1iHHqW/U+jDQb/9w5YN05MUkBevFSH7k6M=",
+  "Source": "CommerceFlow.Services.Auth.API",
+  "BasePath": "_content/CommerceFlow.Services.Auth.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

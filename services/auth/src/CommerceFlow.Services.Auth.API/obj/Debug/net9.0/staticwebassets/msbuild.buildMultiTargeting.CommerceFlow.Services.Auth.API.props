@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/CommerceFlow.Services.Auth.API.props" />
+</Project>
