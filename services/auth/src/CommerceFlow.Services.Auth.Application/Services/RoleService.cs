@@ -4,6 +4,7 @@ using CommerceFlow.Services.Auth.Application.DTOs.Role;
 using CommerceFlow.Services.Auth.Application.Interfaces;
 using CommerceFlow.Services.Auth.Domain.Contracts;
 using CommerceFlow.Services.Auth.Domain.Entities;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommerceFlow.Services.Auth.Application.Services;
@@ -12,11 +13,14 @@ public class RoleService : IRoleService
 {
     private readonly Mapper _mapper;
     private readonly IRoleRepository _roleRepository;
+    private readonly IValidator<Role> _roleValidator;
     public RoleService(
+        IValidator<Role> roleValidator,
         Mapper mapper,
         IRoleRepository roleRepository
     )
     {
+        _roleValidator = roleValidator;
         _mapper = mapper;
         _roleRepository = roleRepository;
     }
@@ -62,6 +66,11 @@ public class RoleService : IRoleService
 
             _mapper.Map(role, dto);
 
+            var validationResult = await _roleValidator.ValidateAsync(role, ct);
+
+            if (!validationResult.IsValid)
+                throw new Exception("Validation error."); //TODO: inform properly
+
             await _roleRepository.UpdateRoleAsync(role, ct);
             await _roleRepository.SaveChangesAsync(ct);
 
@@ -96,6 +105,11 @@ public class RoleService : IRoleService
         {
             var createdRole = _mapper.Map<CreateRoleDTO, Role>(dto);
 
+            var validationResult = await _roleValidator.ValidateAsync(createdRole);
+
+            if (!validationResult.IsValid)
+                throw new Exception("Validation error."); //TODO: Inform properly.
+            
             await _roleRepository.AddRoleAsync(createdRole, ct);
             await SaveChangesAsync(ct);
             //TODO: validasyon
