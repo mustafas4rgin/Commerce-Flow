@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NDkVGrM7Ikg=",
+  "dgSpecHash": "PecWVV47sOY=",
   "success": true,
   "projectFilePath": "/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/CommerceFlow.Services.Auth.Application.csproj",
   "expectedPackageFiles": [
     "/Users/s4rgin/.nuget/packages/automapper/16.1.1/automapper.16.1.1.nupkg.sha512",
+    "/Users/s4rgin/.nuget/packages/fluentvalidation/12.1.1/fluentvalidation.12.1.1.nupkg.sha512",
     "/Users/s4rgin/.nuget/packages/microsoft.entityframeworkcore/9.0.0/microsoft.entityframeworkcore.9.0.0.nupkg.sha512",
     "/Users/s4rgin/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0/microsoft.entityframeworkcore.abstractions.9.0.0.nupkg.sha512",
     "/Users/s4rgin/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.0/microsoft.entityframeworkcore.analyzers.9.0.0.nupkg.sha512",
