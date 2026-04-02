@@ -17,7 +17,7 @@ public class AccessTokenRepository : IAccessTokenRepository
     public IQueryable<AccessToken> GetAccessTokens(CancellationToken ct = default)
     => _context.Set<AccessToken>().AsNoTracking();
     public async Task<AccessToken?> GetAccessTokenByTokenAsync(string token, CancellationToken ct = default)
-    => await _context.Set<AccessToken>().FirstOrDefaultAsync(at => at.Token == token, ct);
+    => await _context.Set<AccessToken>().AsNoTracking().FirstOrDefaultAsync(at => at.Token == token, ct);
     public void UpdateAccessToken(AccessToken accessToken, CancellationToken ct = default)
     => _context.Set<AccessToken>().Update(accessToken);
     public async Task AddAccessTokenAsync(AccessToken accessToken, CancellationToken ct = default)
@@ -25,7 +25,7 @@ public class AccessTokenRepository : IAccessTokenRepository
     public void DeleteAccessToken(AccessToken accessToken, CancellationToken ct = default)
     => _context.Set<AccessToken>().Remove(accessToken);
     public async Task<AccessToken?> GetAccessTokenByUserIdAsync(int userId, CancellationToken ct = default)
-    => await _context.Set<AccessToken>().FirstOrDefaultAsync(at => at.UserId == userId, ct);
+    => await _context.Set<AccessToken>().AsNoTracking().FirstOrDefaultAsync(at => at.UserId == userId, ct);
     public async Task SaveChangesAsync(CancellationToken ct = default)
     => await _context.SaveChangesAsync(ct);
 }
