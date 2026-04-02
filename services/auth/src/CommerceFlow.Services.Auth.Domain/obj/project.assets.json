@@ -193,17 +193,17 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "building-blocks/1.0.0": {
+      "CommerceFlow.Shared.BuildingBlocks/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.0"
         },
         "compile": {
-          "bin/placeholder/building-blocks.dll": {}
+          "bin/placeholder/CommerceFlow.Shared.BuildingBlocks.dll": {}
         },
         "runtime": {
-          "bin/placeholder/building-blocks.dll": {}
+          "bin/placeholder/CommerceFlow.Shared.BuildingBlocks.dll": {}
         }
       }
     }
@@ -544,15 +544,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "building-blocks/1.0.0": {
+    "CommerceFlow.Shared.BuildingBlocks/1.0.0": {
       "type": "project",
-      "path": "../../../../shared/building-blocks/building-blocks.csproj",
-      "msbuildProject": "../../../../shared/building-blocks/building-blocks.csproj"
+      "path": "../../../../shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj",
+      "msbuildProject": "../../../../shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "building-blocks >= 1.0.0"
+      "CommerceFlow.Shared.BuildingBlocks >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -580,8 +580,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/building-blocks.csproj": {
-              "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/shared/building-blocks/building-blocks.csproj"
+            "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj": {
+              "projectPath": "/Users/s4rgin/Desktop/Commerce-Flow/shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj"
             }
           }
         }

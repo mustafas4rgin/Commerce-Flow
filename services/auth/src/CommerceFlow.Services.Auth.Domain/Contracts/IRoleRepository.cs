@@ -9,4 +9,5 @@ public interface IRoleRepository
     Task<Role?> UpdateRoleAsync(Role role, CancellationToken ct = default);
     Task<Role?> AddRoleAsync(Role role, CancellationToken ct = default);
     Task<Role?> DeleteRoleAsync(Role role, CancellationToken ct = default);
+    Task SaveChangesAsync(CancellationToken ct = default);
 }

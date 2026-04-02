@@ -48,4 +48,6 @@ public class RoleRepository : IRoleRepository
 
         return role;
     }
+    public async Task SaveChangesAsync(CancellationToken ct = default)
+    => await _context.SaveChangesAsync(ct);
 }

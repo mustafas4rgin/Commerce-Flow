@@ -878,30 +878,30 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "building-blocks/1.0.0": {
+      "CommerceFlow.Services.Auth.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CommerceFlow.Shared.BuildingBlocks": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommerceFlow.Services.Auth.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommerceFlow.Services.Auth.Domain.dll": {}
+        }
+      },
+      "CommerceFlow.Shared.BuildingBlocks/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.0"
         },
         "compile": {
-          "bin/placeholder/building-blocks.dll": {}
+          "bin/placeholder/CommerceFlow.Shared.BuildingBlocks.dll": {}
         },
         "runtime": {
-          "bin/placeholder/building-blocks.dll": {}
-        }
-      },
-      "CommerceFlow.Services.Auth.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "building-blocks": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CommerceFlow.Services.Auth.Domain.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CommerceFlow.Services.Auth.Domain.dll": {}
+          "bin/placeholder/CommerceFlow.Shared.BuildingBlocks.dll": {}
         }
       }
     }
@@ -2734,15 +2734,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "building-blocks/1.0.0": {
-      "type": "project",
-      "path": "../../../../shared/building-blocks/building-blocks.csproj",
-      "msbuildProject": "../../../../shared/building-blocks/building-blocks.csproj"
-    },
     "CommerceFlow.Services.Auth.Domain/1.0.0": {
       "type": "project",
       "path": "../CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj",
       "msbuildProject": "../CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj"
+    },
+    "CommerceFlow.Shared.BuildingBlocks/1.0.0": {
+      "type": "project",
+      "path": "../../../../shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj",
+      "msbuildProject": "../../../../shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{3FBA0A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "building-blocks", "shared\building-blocks\building-blocks.csproj", "{AEDD0843-409C-4DC6-870B-16413D185988}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommerceFlow.Services.Auth.Application", "services\auth\src\CommerceFlow.Services.Auth.Application\CommerceFlow.Services.Auth.Application.csproj", "{025FB39B-ED62-41AE-8419-6036EE0FC589}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{AEDD0843-409C-4DC6-870B-16413D185988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDD0843-409C-4DC6-870B-16413D185988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDD0843-409C-4DC6-870B-16413D185988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{025FB39B-ED62-41AE-8419-6036EE0FC589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025FB39B-ED62-41AE-8419-6036EE0FC589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025FB39B-ED62-41AE-8419-6036EE0FC589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025FB39B-ED62-41AE-8419-6036EE0FC589}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{142DD43C-B8C4-4BAC-A1E0-800801D4209B} = {14B452B8-C247-4C78-A1A2-D885665CFFB8}
@@ -45,5 +51,6 @@ Global
 		{B36CC9F6-ED89-4FF5-9A59-2D533D402510} = {3049E189-A7CB-43F6-9FB3-6863C2BB61F2}
 		{EC90A480-D3F7-4AC4-9490-0C87C7830ABC} = {3049E189-A7CB-43F6-9FB3-6863C2BB61F2}
 		{AEDD0843-409C-4DC6-870B-16413D185988} = {3FBA0A2C-BA1E-4A5B-96C8-B7A9A89BDEE0}
+		{025FB39B-ED62-41AE-8419-6036EE0FC589} = {3049E189-A7CB-43F6-9FB3-6863C2BB61F2}
 	EndGlobalSection
 EndGlobal

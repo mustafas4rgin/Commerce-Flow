@@ -9,6 +9,7 @@
       "CommerceFlow.Services.Auth.Infrastructure/1.0.0": {
         "dependencies": {
           "CommerceFlow.Services.Auth.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.Design": "9.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "9.0.0"
         },
@@ -577,20 +578,23 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Text.Json/9.0.0": {},
       "System.Threading.Channels/7.0.0": {},
-      "building-blocks/1.0.0": {
+      "CommerceFlow.Services.Auth.Domain/1.0.0": {
+        "dependencies": {
+          "CommerceFlow.Shared.BuildingBlocks": "1.0.0"
+        },
         "runtime": {
-          "building-blocks.dll": {
+          "CommerceFlow.Services.Auth.Domain.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
       },
-      "CommerceFlow.Services.Auth.Domain/1.0.0": {
+      "CommerceFlow.Shared.BuildingBlocks/1.0.0": {
         "dependencies": {
-          "building-blocks": "1.0.0"
+          "Microsoft.EntityFrameworkCore": "9.0.0"
         },
         "runtime": {
-          "CommerceFlow.Services.Auth.Domain.dll": {
+          "CommerceFlow.Shared.BuildingBlocks.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -877,12 +881,12 @@
       "path": "system.threading.channels/7.0.0",
       "hashPath": "system.threading.channels.7.0.0.nupkg.sha512"
     },
-    "building-blocks/1.0.0": {
+    "CommerceFlow.Services.Auth.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "CommerceFlow.Services.Auth.Domain/1.0.0": {
+    "CommerceFlow.Shared.BuildingBlocks/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

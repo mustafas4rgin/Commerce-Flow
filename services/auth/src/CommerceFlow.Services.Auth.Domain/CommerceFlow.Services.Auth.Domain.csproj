@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\shared\building-blocks\building-blocks.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\CommerceFlow.Shared.BuildingBlocks\CommerceFlow.Shared.BuildingBlocks.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
