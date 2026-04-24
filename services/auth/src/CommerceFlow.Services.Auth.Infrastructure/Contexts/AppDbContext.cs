@@ -1,7 +1,7 @@
 using CommerceFlow.Services.Auth.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommerceFLow.Services.Auth.Infrastructure.Contexts;
+namespace CommerceFlow.Services.Auth.Infrastructure.Contexts;
 
 public class AppDbContext : DbContext
 {

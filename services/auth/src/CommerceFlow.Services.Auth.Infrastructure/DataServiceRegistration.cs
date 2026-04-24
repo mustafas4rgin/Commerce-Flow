@@ -1,9 +1,10 @@
-using CommerceFLow.Services.Auth.Infrastructure.Contexts;
+
+using CommerceFlow.Services.Auth.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommerceFLow.Services.Auth.Infrastructure;
+namespace CommerceFlow.Services.Auth.Infrastructure;
 
 public static class DataServiceRegistration
 {

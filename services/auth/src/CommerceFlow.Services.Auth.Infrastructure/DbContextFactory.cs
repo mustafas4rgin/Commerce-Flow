@@ -1,8 +1,8 @@
-using CommerceFLow.Services.Auth.Infrastructure.Contexts;
+using CommerceFlow.Services.Auth.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace CommerceFLow.Services.Auth.Infrastructure;
+namespace CommerceFlow.Services.Auth.Infrastructure;
 
 public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {

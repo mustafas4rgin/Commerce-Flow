@@ -1,6 +1,6 @@
 using CommerceFlow.Services.Auth.Domain.Contracts;
 using CommerceFlow.Services.Auth.Domain.Entities;
-using CommerceFLow.Services.Auth.Infrastructure.Contexts;
+using CommerceFlow.Services.Auth.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace CommerceFLow.Services.Auth.Infrastructure.Repositories;

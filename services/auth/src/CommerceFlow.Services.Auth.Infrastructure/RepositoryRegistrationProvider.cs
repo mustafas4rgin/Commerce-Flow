@@ -2,7 +2,7 @@ using CommerceFlow.Services.Auth.Domain.Contracts;
 using CommerceFLow.Services.Auth.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommerceFLow.Services.Auth.Infrastructure;
+namespace CommerceFlow.Services.Auth.Infrastructure;
 
 
 public class RepositoryRegistrationProvider

@@ -12,6 +12,7 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.AspNetCore.OpenApi.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
@@ -21,15 +22,19 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Npgsql.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/System.Diagnostics.DiagnosticSource.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Application.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Infrastructure.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Application.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Infrastructure.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/obj/Debug/net9.0/CommerceFlow.Services.Auth.API.csproj.AssemblyReference.cache
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/obj/Debug/net9.0/CommerceFlow.Services.Auth.API.GeneratedMSBuildEditorConfig.editorconfig
@@ -55,8 +60,3 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/obj/Debug/net9.0/CommerceFlow.Services.Auth.API.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/obj/Debug/net9.0/CommerceFlow.Services.Auth.API.genruntimeconfig.cache
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/obj/Debug/net9.0/ref/CommerceFlow.Services.Auth.API.dll
-/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll
-/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Npgsql.dll
-/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
-/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Infrastructure.dll
-/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Infrastructure.pdb
