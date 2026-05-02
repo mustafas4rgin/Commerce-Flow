@@ -12,7 +12,7 @@ public static class DataServiceRegistration
     {
         services.AddDbContext<AppDbContext>(options =>
         {
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+            options.UseNpgsql(configuration.GetConnectionString("AuthDatabase"));
         });
 
         RepositoryRegistrationProvider.RegisterRepositories(services);

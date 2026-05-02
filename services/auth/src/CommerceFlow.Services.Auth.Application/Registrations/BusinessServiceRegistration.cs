@@ -1,3 +1,4 @@
+using CommerceFlow.Services.Auth.Application.Profiles;
 using CommerceFlow.Services.Auth.Application.Providers;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,8 +10,9 @@ public static class BusinessServiceRegistration
     {
         ServiceRegistrationProvider.RegisterServices(services);
 
+        services.AddAutoMapper(_ => { }, typeof(RoleProfile).Assembly);
         services.AddEntityValidators();
-        
+
         return services;
     }
 }

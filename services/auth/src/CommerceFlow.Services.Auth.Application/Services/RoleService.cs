@@ -11,12 +11,12 @@ namespace CommerceFlow.Services.Auth.Application.Services;
 
 public class RoleService : IRoleService
 {
-    private readonly Mapper _mapper;
+    private readonly IMapper _mapper;
     private readonly IRoleRepository _roleRepository;
     private readonly IValidator<Role> _roleValidator;
     public RoleService(
         IValidator<Role> roleValidator,
-        Mapper mapper,
+        IMapper mapper,
         IRoleRepository roleRepository
     )
     {
@@ -64,7 +64,7 @@ public class RoleService : IRoleService
 
             if (role is null) throw new Exception("There is no role.");
 
-            _mapper.Map(role, dto);
+            _mapper.Map(dto, role);
 
             var validationResult = await _roleValidator.ValidateAsync(role, ct);
 
