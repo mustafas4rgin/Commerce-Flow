@@ -25,7 +25,7 @@ namespace CommerceFlow.Services.Auth.API.Controllers
 
                 ResultStatus.Unauthorized => Unauthorized(result),
 
-                ResultStatus.Forbidden => Forbid(),
+                ResultStatus.Forbidden => StatusCode(StatusCodes.Status403Forbidden, result),
 
                 ResultStatus.Error => StatusCode(StatusCodes.Status500InternalServerError, result),
 
@@ -49,7 +49,7 @@ namespace CommerceFlow.Services.Auth.API.Controllers
 
                 ResultStatus.Unauthorized => Unauthorized(result),
 
-                ResultStatus.Forbidden => Forbid(),
+                ResultStatus.Forbidden => StatusCode(StatusCodes.Status403Forbidden, result),
 
                 ResultStatus.Error => StatusCode(StatusCodes.Status500InternalServerError, result),
 

@@ -1,4 +1,4 @@
-using System.Data.Common;
+
 using AutoMapper;
 using CommerceFlow.Services.Auth.Application.DTOs.Role;
 using CommerceFlow.Services.Auth.Application.Interfaces;
@@ -33,78 +33,99 @@ public class RoleService : IRoleService
 
             var roleDtos = _mapper.Map<List<RoleDTO>>(roles);
 
-            return ServiceResult<List<RoleDTO>>.Ok(
-                roleDtos,
-                roleDtos.Any()
-                    ? "Roles found."
-                    : "No roles found."
-    );
+            var message = roleDtos.Any()
+                ? "Roles listed successfully."
+                : "No roles found.";
+
+            return ServiceResult<List<RoleDTO>>.Ok(roleDtos, message);
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message); //TODO: LOGG
+            return ServiceResult<List<RoleDTO>>.Fail(
+                ResultStatus.Error,
+                "An error occurred while getting roles.",
+                new List<string> { ex.Message }
+            );
         }
     }
-    public async Task<Role> GetRoleByIdAsync(int id, CancellationToken ct = default)
+    public async Task<ServiceResult<RoleDTO>> GetRoleByIdAsync(int id, CancellationToken ct = default)
     {
         try
         {
             var role = await _roleRepository.GetRoleByIdAsync(id, ct);
 
             if (role is null)
-                throw new Exception("There is no role.");
+                return ServiceResult<RoleDTO>.Fail(ResultStatus.NotFound, "There is no role with that id.");
+            
+            var dto = _mapper.Map<RoleDTO>(role);
 
-            return role;
+            return ServiceResult<RoleDTO>.Ok(dto);
         }
         catch (Exception ex)
         {
             throw new Exception(ex.Message);
         }
     }
-    public async Task<Role> UpdateRoleAsync(int roleId, UpdateRoleDTO dto, CancellationToken ct = default)
+    public async Task<ServiceResult> UpdateRoleAsync(int roleId, UpdateRoleDTO dto, CancellationToken ct = default)
     {
         try
         {
             var role = await _roleRepository.GetRoleByIdAsync(roleId, ct);
 
-            if (role is null) throw new Exception("There is no role.");
+            if (role is null) return ServiceResult.Fail(ResultStatus.NotFound, $"There is no role with ID : {roleId}");
 
             _mapper.Map(dto, role);
 
             var validationResult = await _roleValidator.ValidateAsync(role, ct);
 
             if (!validationResult.IsValid)
-                throw new Exception("Validation error."); //TODO: inform properly
+            {
+                var errors = validationResult.Errors
+                    .Select(x => x.ErrorMessage)
+                    .ToList();
+
+                return ServiceResult.Fail(
+                    ResultStatus.ValidationError,
+                    "Validation error.",
+                    errors
+                );
+            }
+
+            if (await _roleRepository.RoleNameExistsAsync(role.Name, roleId, ct))
+                return ServiceResult.Fail(ResultStatus.Conflict, "Role with that name already exists.");
 
             await _roleRepository.UpdateRoleAsync(role, ct);
             await _roleRepository.SaveChangesAsync(ct);
 
-            return role;
+            return ServiceResult.Ok();
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            return ServiceResult.Fail(
+                ResultStatus.Error,
+                "An error occured while updating role."
+            );//TODO: LOG
         }
     }
-    public async Task<Role> DeleteRoleAsync(int id, CancellationToken ct = default)
+    public async Task<ServiceResult> DeleteRoleAsync(int id, CancellationToken ct = default)
     {
         try
         {
             var role = await _roleRepository.GetRoleByIdAsync(id, ct);
 
-            if (role is null) throw new Exception("There is no role.");
+            if (role is null) return ServiceResult.Fail(ResultStatus.NotFound, "There is no role with that id.");
 
             await _roleRepository.DeleteRoleAsync(role, ct);
             await SaveChangesAsync(ct);
 
-            return role;
+            return ServiceResult.Ok();
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            return ServiceResult.Fail(ResultStatus.Error, "An error occured while deleting role.");
         }
     }
-    public async Task<Role> CreateRoleAsync(CreateRoleDTO dto, CancellationToken ct = default)
+    public async Task<ServiceResult> CreateRoleAsync(CreateRoleDTO dto, CancellationToken ct = default)
     {
         try
         {
@@ -113,16 +134,30 @@ public class RoleService : IRoleService
             var validationResult = await _roleValidator.ValidateAsync(createdRole);
 
             if (!validationResult.IsValid)
-                throw new Exception("Validation error."); //TODO: Inform properly.
+            {
+                var errors = validationResult.Errors
+                    .Select(x => x.ErrorMessage)
+                    .ToList();
+
+                return ServiceResult.Fail(
+                    ResultStatus.ValidationError,
+                    "Validation error.",
+                    errors
+                );
+            }
+
+            var existingRole = await _roleRepository.GetRoleByNameAsync(createdRole.Name, ct);
+
+            if (existingRole is not null) return ServiceResult.Fail(ResultStatus.Conflict, "That role already exists.");
 
             await _roleRepository.AddRoleAsync(createdRole, ct);
             await SaveChangesAsync(ct);
             //TODO: validasyon
-            return createdRole;
+            return ServiceResult.Ok();
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            return ServiceResult.Fail(ResultStatus.Error, "An error occured while creating role.");
         }
     }
     public async Task SaveChangesAsync(CancellationToken ct = default)

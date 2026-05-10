@@ -7,9 +7,9 @@ namespace CommerceFlow.Services.Auth.Application.Interfaces;
 public interface IRoleService
 {
     Task<ServiceResult<List<RoleDTO>>> GetRolesAsync(CancellationToken ct = default);
-    Task<Role> GetRoleByIdAsync(int id, CancellationToken ct = default);
-    Task<Role> UpdateRoleAsync(int id, UpdateRoleDTO dto, CancellationToken ct = default);
-    Task<Role> DeleteRoleAsync(int id, CancellationToken ct = default);
-    Task<Role> CreateRoleAsync(CreateRoleDTO dto, CancellationToken ct = default);
+    Task<ServiceResult<RoleDTO>> GetRoleByIdAsync(int id, CancellationToken ct = default);
+    Task<ServiceResult> UpdateRoleAsync(int id, UpdateRoleDTO dto, CancellationToken ct = default);
+    Task<ServiceResult> DeleteRoleAsync(int id, CancellationToken ct = default);
+    Task<ServiceResult> CreateRoleAsync(CreateRoleDTO dto, CancellationToken ct = default);
     Task SaveChangesAsync(CancellationToken ct = default);
 }
