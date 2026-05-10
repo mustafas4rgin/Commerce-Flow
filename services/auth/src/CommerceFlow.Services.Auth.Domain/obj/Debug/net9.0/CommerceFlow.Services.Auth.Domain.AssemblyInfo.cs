@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CommerceFlow.Services.Auth.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47fa8f0b133aae9c71ed4e6a8e21f57c4b50c388")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3576fe11694277dcce0dab5f305fb1e48efb8f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CommerceFlow.Services.Auth.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CommerceFlow.Services.Auth.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
