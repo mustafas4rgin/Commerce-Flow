@@ -9,7 +9,7 @@ public static class BusinessServiceRegistration
     public static IServiceCollection AddBusinessService(this IServiceCollection services)
     {
         ServiceRegistrationProvider.RegisterServices(services);
-
+        
         services.AddAutoMapper(_ => { }, typeof(RoleProfile).Assembly);
         services.AddEntityValidators();
 

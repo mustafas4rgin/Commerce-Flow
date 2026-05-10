@@ -21,7 +21,7 @@ namespace CommerceFlow.Services.Auth.API.Controllers
         {
             var roles = await _roleService.GetRolesAsync(ct);
             
-            return Ok(roles);
+            return ToActionResult(roles);
         }
     }
 }

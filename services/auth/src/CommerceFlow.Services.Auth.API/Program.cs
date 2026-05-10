@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using CommerceFlow.Services.Auth.Application.Profiles;
 using CommerceFlow.Services.Auth.Application.Registrations;
 using CommerceFlow.Services.Auth.Infrastructure;
@@ -10,7 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 builder.Services.AddBusinessService();
 builder.Services.AddDataServices(builder.Configuration);
 builder.Services.AddSwaggerGen(ConfigureSwagger);

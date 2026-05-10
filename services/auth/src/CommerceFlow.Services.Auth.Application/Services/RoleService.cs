@@ -4,6 +4,7 @@ using CommerceFlow.Services.Auth.Application.DTOs.Role;
 using CommerceFlow.Services.Auth.Application.Interfaces;
 using CommerceFlow.Services.Auth.Domain.Contracts;
 using CommerceFlow.Services.Auth.Domain.Entities;
+using CommerceFlow.Shared.Results;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,18 +25,22 @@ public class RoleService : IRoleService
         _mapper = mapper;
         _roleRepository = roleRepository;
     }
-    public async Task<IEnumerable<Role>> GetRolesAsync(CancellationToken ct = default)
+    public async Task<ServiceResult<List<RoleDTO>>> GetRolesAsync(CancellationToken ct = default)
     {
         try
         {
-            var roles = _roleRepository.GetRoles(ct);
+            var roles = await _roleRepository.GetRoles(ct).ToListAsync(ct);
 
-            if (!roles.Any())
-                throw new Exception("There is no role.");
-            
-            return await roles.ToListAsync(ct);
+            var roleDtos = _mapper.Map<List<RoleDTO>>(roles);
+
+            return ServiceResult<List<RoleDTO>>.Ok(
+                roleDtos,
+                roleDtos.Any()
+                    ? "Roles found."
+                    : "No roles found."
+    );
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             throw new Exception(ex.Message); //TODO: LOGG
         }
@@ -48,7 +53,7 @@ public class RoleService : IRoleService
 
             if (role is null)
                 throw new Exception("There is no role.");
-            
+
             return role;
         }
         catch (Exception ex)
@@ -94,7 +99,7 @@ public class RoleService : IRoleService
 
             return role;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             throw new Exception(ex.Message);
         }
@@ -109,7 +114,7 @@ public class RoleService : IRoleService
 
             if (!validationResult.IsValid)
                 throw new Exception("Validation error."); //TODO: Inform properly.
-            
+
             await _roleRepository.AddRoleAsync(createdRole, ct);
             await SaveChangesAsync(ct);
             //TODO: validasyon
