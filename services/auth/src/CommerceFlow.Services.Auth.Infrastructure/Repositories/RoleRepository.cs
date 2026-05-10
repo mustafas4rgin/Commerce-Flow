@@ -40,9 +40,6 @@ public class RoleRepository : IRoleRepository
     {
         if (role is null || role.Id == default) return null;
 
-        var existingRole = await _context.Set<Role>().FindAsync(role.Id);
-        if (existingRole is null) return null;
-
         _context.Set<Role>().Update(role);
 
         role.UpdatedAt = DateTime.UtcNow;

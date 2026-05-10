@@ -7,6 +7,7 @@ using CommerceFlow.Services.Auth.Domain.Entities;
 using CommerceFlow.Shared.Results;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace CommerceFlow.Services.Auth.Application.Services;
 
@@ -15,12 +16,15 @@ public class RoleService : IRoleService
     private readonly IMapper _mapper;
     private readonly IRoleRepository _roleRepository;
     private readonly IValidator<Role> _roleValidator;
+    private readonly ILogger<RoleService> _logger;
     public RoleService(
         IValidator<Role> roleValidator,
         IMapper mapper,
-        IRoleRepository roleRepository
+        IRoleRepository roleRepository,
+        ILogger<RoleService> logger
     )
     {
+        _logger = logger;
         _roleValidator = roleValidator;
         _mapper = mapper;
         _roleRepository = roleRepository;
@@ -41,10 +45,11 @@ public class RoleService : IRoleService
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "An error occurred while getting roles.");
+
             return ServiceResult<List<RoleDTO>>.Fail(
                 ResultStatus.Error,
-                "An error occurred while getting roles.",
-                new List<string> { ex.Message }
+                "An error occurred while getting roles."
             );
         }
     }
@@ -56,14 +61,19 @@ public class RoleService : IRoleService
 
             if (role is null)
                 return ServiceResult<RoleDTO>.Fail(ResultStatus.NotFound, "There is no role with that id.");
-            
+
             var dto = _mapper.Map<RoleDTO>(role);
 
             return ServiceResult<RoleDTO>.Ok(dto);
         }
         catch (Exception ex)
         {
-            throw new Exception(ex.Message);
+            _logger.LogError(ex, "An error occurred while getting role. RoleID: {RoleID}", id);
+
+            return ServiceResult<RoleDTO>.Fail(
+                ResultStatus.Error,
+                "An error occurred while getting role."
+            );
         }
     }
     public async Task<ServiceResult> UpdateRoleAsync(int roleId, UpdateRoleDTO dto, CancellationToken ct = default)
@@ -101,10 +111,12 @@ public class RoleService : IRoleService
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "An error occurred while updating role. RoleName: {RoleName}", dto.Name);
+
             return ServiceResult.Fail(
                 ResultStatus.Error,
-                "An error occured while updating role."
-            );//TODO: LOG
+                "An error occurred while updating role."
+            );
         }
     }
     public async Task<ServiceResult> DeleteRoleAsync(int id, CancellationToken ct = default)
@@ -122,7 +134,12 @@ public class RoleService : IRoleService
         }
         catch (Exception ex)
         {
-            return ServiceResult.Fail(ResultStatus.Error, "An error occured while deleting role.");
+            _logger.LogError(ex, "An error occurred while deleting role. Role ID: {RoleId}", id);
+
+            return ServiceResult.Fail(
+                ResultStatus.Error,
+                "An error occurred while deleting role."
+            );
         }
     }
     public async Task<ServiceResult> CreateRoleAsync(CreateRoleDTO dto, CancellationToken ct = default)
@@ -131,7 +148,7 @@ public class RoleService : IRoleService
         {
             var createdRole = _mapper.Map<CreateRoleDTO, Role>(dto);
 
-            var validationResult = await _roleValidator.ValidateAsync(createdRole);
+            var validationResult = await _roleValidator.ValidateAsync(createdRole, ct);
 
             if (!validationResult.IsValid)
             {
@@ -152,12 +169,17 @@ public class RoleService : IRoleService
 
             await _roleRepository.AddRoleAsync(createdRole, ct);
             await SaveChangesAsync(ct);
-            //TODO: validasyon
+
             return ServiceResult.Ok();
         }
         catch (Exception ex)
         {
-            return ServiceResult.Fail(ResultStatus.Error, "An error occured while creating role.");
+            _logger.LogError(ex, "An error occurred while creating role. RoleName: {RoleName}", dto.Name);
+
+            return ServiceResult.Fail(
+                ResultStatus.Error,
+                "An error occurred while creating role."
+            );
         }
     }
     public async Task SaveChangesAsync(CancellationToken ct = default)
