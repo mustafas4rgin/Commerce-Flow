@@ -4,9 +4,9 @@ namespace CommerceFlow.Services.Auth.Domain.Contracts;
 
 public interface IUserRepository
 {
-    Task<IEnumerable<User>> GetUsers(CancellationToken ct = default);
+    IQueryable<User> GetUsers(CancellationToken ct = default);
     Task<User?> GetUserByIdAsync(int id, CancellationToken ct = default);
-    Task<User?> AddUserAsync(Role role, CancellationToken ct = default);
-    Task<User?> UpdateUserAsync(Role role, CancellationToken ct = default);
-    Task<User?> DeleteUserAsync(Role role, CancellationToken ct = default);
+    Task<User?> AddUserAsync(User user, CancellationToken ct = default);
+    Task<User?> UpdateUserAsync(User user, CancellationToken ct = default);
+    Task<User?> DeleteUserAsync(User user, CancellationToken ct = default);
 }

@@ -13,6 +13,7 @@ public class RepositoryRegistrationProvider
         {
             (typeof(IRoleRepository),typeof(RoleRepository)),
             (typeof(IAuthRepository), typeof(AuthRepository)),
+            (typeof(IUserRepository), typeof(UserRepository))
         };
         foreach (var service in servicesToRegister)
         {
