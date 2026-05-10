@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CommerceFlow.Shared.BuildingBlocks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49bb40011871b774916cbf74e6e5d8633a0f78ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+512daf2927b28fa2207396b8a135e775710a6eb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("CommerceFlow.Shared.BuildingBlocks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CommerceFlow.Shared.BuildingBlocks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -20,7 +20,7 @@ namespace CommerceFlow.Services.Auth.API.Controllers
         public async Task<IActionResult> GetAllRolesAsync([FromHeader]CancellationToken ct = default)
         {
             var roles = await _roleService.GetRolesAsync(ct);
-
+            
             return Ok(roles);
         }
     }
