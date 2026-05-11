@@ -19,7 +19,7 @@ namespace CommerceFlow.Services.Auth.API.Controllers
         [HttpDelete("roles/delete/{id:int}")]
         public async Task<IActionResult> DeleteRoleByIdAsync([FromRoute]int id, CancellationToken ct = default)
         {
-            var result = await _roleService.DeleteRoleAsync(id, ct);
+            var result = await _roleService.DeleteRoleByIdAsync(id, ct);
 
             return ToActionResult(result);
         }
@@ -45,9 +45,9 @@ namespace CommerceFlow.Services.Auth.API.Controllers
             return ToActionResult(result);
         }
         [HttpPut("roles/update/{id:int}")]
-        public async Task<IActionResult> UpdateRoleAsync([FromRoute]int id, [FromBody]UpdateRoleDTO dto, CancellationToken ct = default)
+        public async Task<IActionResult> UpdateRoleByIdAsync([FromRoute]int id, [FromBody]UpdateRoleDTO dto, CancellationToken ct = default)
         {
-            var result = await _roleService.UpdateRoleAsync(id, dto, ct);
+            var result = await _roleService.UpdateRoleByIdAsync(id, dto, ct);
 
             return ToActionResult(result);
         }

@@ -76,7 +76,7 @@ public class RoleService : IRoleService
             );
         }
     }
-    public async Task<ServiceResult> UpdateRoleAsync(int roleId, UpdateRoleDTO dto, CancellationToken ct = default)
+    public async Task<ServiceResult> UpdateRoleByIdAsync(int roleId, UpdateRoleDTO dto, CancellationToken ct = default)
     {
         try
         {
@@ -119,7 +119,7 @@ public class RoleService : IRoleService
             );
         }
     }
-    public async Task<ServiceResult> DeleteRoleAsync(int id, CancellationToken ct = default)
+    public async Task<ServiceResult> DeleteRoleByIdAsync(int id, CancellationToken ct = default)
     {
         try
         {
