@@ -47,7 +47,7 @@ namespace CommerceFlow.Services.Auth.API.Controllers
             return ToActionResult(result);
         }
         [HttpDelete("users/delete/{id:int}")]
-        public async Task<IActionResult> DeleteUserAsync([FromRoute]int id, [FromBody]UpdateUserDTO dto, CancellationToken ct = default)
+        public async Task<IActionResult> DeleteUserAsync([FromRoute]int id, CancellationToken ct = default)
         {
             var result = await _userService.DeleteUserByIdAsync(id, ct);
 

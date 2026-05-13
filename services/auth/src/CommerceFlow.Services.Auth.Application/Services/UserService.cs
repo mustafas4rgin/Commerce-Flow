@@ -29,36 +29,58 @@ public class UserService : IUserService
         _validator = validator;
         _logger = logger;
     }
-    public async Task<ServiceResult<List<UserDTO>>> GetUsersAsync(
-        UserFilterDTO dto,
+    public async Task<ServiceResult<PagedResult<UserDTO>>> GetUsersAsync(
+        UserFilterDTO filter,
         CancellationToken ct = default)
     {
         try
         {
+            if (filter.PageNumber < 1)
+                filter.PageNumber = 1;
+
+            if (filter.PageSize < 1)
+                filter.PageSize = 10;
+
+            if (filter.PageSize > 50)
+                filter.PageSize = 50;
+
             var query = _userRepository.GetUsers(ct);
 
-            if (!string.IsNullOrWhiteSpace(dto.UserName)) query = query.Where(u => u.UserName.Contains(dto.UserName));
+            if (!string.IsNullOrWhiteSpace(filter.UserName)) query = query.Where(u => u.UserName.Contains(filter.UserName));
 
-            if (!string.IsNullOrWhiteSpace(dto.FirstName)) query = query.Where(u => u.FirstName.Contains(dto.FirstName));
+            if (!string.IsNullOrWhiteSpace(filter.FirstName)) query = query.Where(u => u.FirstName.Contains(filter.FirstName));
 
-            if (!string.IsNullOrWhiteSpace(dto.LastName)) query = query.Where(u => u.LastName.Contains(dto.LastName));
+            if (!string.IsNullOrWhiteSpace(filter.LastName)) query = query.Where(u => u.LastName.Contains(filter.LastName));
 
-            var users = await query.ToListAsync(ct);
+            var totalCount = await query.CountAsync(ct);
+
+            var users = await query
+                .OrderBy(u => u.Id)
+                .Skip((filter.PageNumber - 1) * filter.PageSize)
+                .Take(filter.PageSize)
+                .ToListAsync(ct);
 
             var userDtos = _mapper.Map<List<UserDTO>>(users);
 
-            if (userDtos.Count == 0) return ServiceResult<List<UserDTO>>.Fail(
-                ResultStatus.NotFound,
-                "No users found.");
+            var pagedResult = new PagedResult<UserDTO>
+            {
+                Items = userDtos,
+                PageNumber = filter.PageNumber,
+                PageSize = filter.PageSize,
+                TotalCount = totalCount
 
-            return ServiceResult<List<UserDTO>>.Ok(userDtos,
-            "Users found.");
+            };
+
+            return ServiceResult<PagedResult<UserDTO>>.Ok(
+                pagedResult,
+                "Users found."
+            );
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "An error occurred while getting users.");
 
-            return ServiceResult<List<UserDTO>>.Fail(
+            return ServiceResult<PagedResult<UserDTO>>.Fail(
                 ResultStatus.Error,
                 "An error occurred while getting users.");
         }
@@ -85,84 +107,6 @@ public class UserService : IUserService
             return ServiceResult<UserDTO>.Fail(
                 ResultStatus.Error,
                 $"An error occurred while getting user with ID : {userId}");
-        }
-    }
-    public async Task<ServiceResult<List<UserDTO>>> GetUsersByUserNameAsync(string userName, CancellationToken ct = default)
-    {
-        try
-        {
-            var users = await _userRepository.GetUsersByUserNameAsync(userName, ct);
-
-            if (!users.Any()) return ServiceResult<List<UserDTO>>.Fail(
-                ResultStatus.NotFound,
-                $"No user found with username: {userName}."
-            );
-
-            var usersDto = _mapper.Map<List<UserDTO>>(users);
-
-            return ServiceResult<List<UserDTO>>.Ok(
-                usersDto,
-                $"Users found with username: {userName}."
-            );
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, $"An error occurred while getting users with username : {userName}.");
-
-            return ServiceResult<List<UserDTO>>.Fail(
-                ResultStatus.Error,
-                $"An error occurred while getting users wtih username: {userName}."
-            );
-        }
-    }
-    public async Task<ServiceResult<List<UserDTO>>> GetUsersByFirstNameAsync(string firstName, CancellationToken ct = default)
-    {
-        try
-        {
-            var users = await _userRepository.GetUsersByFirstNameAsync(firstName, ct);
-
-            if (!users.Any()) return ServiceResult<List<UserDTO>>.Fail(
-                ResultStatus.NotFound,
-                $"There is no user with name {firstName}."
-            );
-
-            var userDtos = _mapper.Map<List<UserDTO>>(users);
-
-            return ServiceResult<List<UserDTO>>.Ok(userDtos, "Users found.");
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, $"An error occurred while getting users with name : {firstName}.");
-
-            return ServiceResult<List<UserDTO>>.Fail(
-                ResultStatus.Error,
-                $"An error occurred while getting users with name {firstName}."
-            );
-        }
-    }
-    public async Task<ServiceResult<List<UserDTO>>> GetUsersByLastNameAsync(string lastName, CancellationToken ct = default)
-    {
-        try
-        {
-            var users = await _userRepository.GetUsersByLastNameAsync(lastName, ct);
-
-            if (!users.Any()) return ServiceResult<List<UserDTO>>.Fail(
-                ResultStatus.NotFound,
-                $"There is no user with last name {lastName}."
-            );
-
-            var userDtos = _mapper.Map<List<UserDTO>>(users);
-
-            return ServiceResult<List<UserDTO>>.Ok(userDtos, "Users found.");
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, $"An error occurred while getting user with last name {lastName}.");
-
-            return ServiceResult<List<UserDTO>>.Fail(
-                ResultStatus.Error,
-                $"An error occurred while getting users with last name {lastName}."
-            );
         }
     }
     public async Task<ServiceResult> CreateUserAsync(CreateUserDTO dto, CancellationToken ct = default)
