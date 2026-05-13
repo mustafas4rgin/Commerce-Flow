@@ -11,6 +11,7 @@ public class ServiceRegistrationProvider
         var servicesToRegister = new (Type Interface, Type Implementation)[]
         {
             (typeof(IRoleService),typeof(RoleService)),
+            (typeof(IUserService), typeof(UserService))
         };
 
         foreach (var service in servicesToRegister)

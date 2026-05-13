@@ -17,8 +17,20 @@ public class UserRepository : IUserRepository
     }
     public IQueryable<User> GetUsers(CancellationToken ct = default)
     => _context.Set<User>().AsNoTracking();
+    public async Task<IEnumerable<User>> GetUsersByLastNameAsync(string lastName, CancellationToken ct = default)
+    => await _context.Set<User>().AsNoTracking().Where(u => u.LastName == lastName).ToListAsync(ct);
+    public async Task<IEnumerable<User>> GetUsersByFirstNameAsync(string firstName, CancellationToken ct = default)
+    => await _context.Set<User>().AsNoTracking().Where(u => u.FirstName == firstName).ToListAsync(ct);
+    public async Task<IEnumerable<User>> GetUsersByUserNameAsync(string userName, CancellationToken ct = default)
+    => await _context.Set<User>().AsNoTracking().Where(u => u.UserName == userName).ToListAsync(ct);
     public async Task<User?> GetUserByIdAsync(int id, CancellationToken ct = default)
     => await _context.Set<User>().FindAsync(id, ct);
+    public async Task<bool> UserExistsByEmailAsync(string email, CancellationToken ct = default)
+    => await _context.Set<User>().AnyAsync(u => u.Email == email, ct);
+    public async Task<bool> UserExistsByUserNameAsync(string userName, CancellationToken ct = default)
+    => await _context.Set<User>().AnyAsync(u => u.UserName == userName, ct);
+    public async Task<bool> UserExistsByIdAsync(int id, CancellationToken ct = default)
+    => await _context.Set<User>().AnyAsync(u => u.Id == id, ct);
     public async Task<User?> AddUserAsync(User user, CancellationToken ct = default)
     {
         if (user is null) return null;
@@ -27,7 +39,7 @@ public class UserRepository : IUserRepository
 
         return user;
     }
-    public async Task<User?> UpdateUserAsync(User user, CancellationToken ct = default)
+    public User? UpdateUser(User user, CancellationToken ct = default)
     {
         if (user is null || user.Id == default) return null;
 
@@ -46,4 +58,16 @@ public class UserRepository : IUserRepository
 
         return user;
     }
+    public async Task<User?> DeleteUserByIdAsync(int id, CancellationToken ct = default)
+    {
+        var user = await GetUserByIdAsync(id, ct);
+
+        if (user is null) return null;
+
+        user.Delete();
+
+        return user;
+    }
+    public async Task SaveChangesAsync(CancellationToken ct = default)
+    => await _context.SaveChangesAsync(ct);
 }

@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{2470DB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommerceFlow.Shared.BuildingBlocks", "shared\CommerceFlow.Shared.BuildingBlocks\CommerceFlow.Shared.BuildingBlocks.csproj", "{04D3C576-2D53-451A-9571-D9D93972A07A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{1EBADD59-46C3-4035-A4D7-50A81C7C2206}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{04D3C576-2D53-451A-9571-D9D93972A07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04D3C576-2D53-451A-9571-D9D93972A07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04D3C576-2D53-451A-9571-D9D93972A07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBADD59-46C3-4035-A4D7-50A81C7C2206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBADD59-46C3-4035-A4D7-50A81C7C2206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBADD59-46C3-4035-A4D7-50A81C7C2206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBADD59-46C3-4035-A4D7-50A81C7C2206}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{142DD43C-B8C4-4BAC-A1E0-800801D4209B} = {14B452B8-C247-4C78-A1A2-D885665CFFB8}

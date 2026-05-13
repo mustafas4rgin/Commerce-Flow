@@ -11,7 +11,8 @@
           "AutoMapper": "16.1.1",
           "CommerceFlow.Services.Auth.Domain": "1.0.0",
           "FluentValidation": "12.1.1",
-          "FluentValidation.DependencyInjectionExtensions": "12.1.1"
+          "FluentValidation.DependencyInjectionExtensions": "12.1.1",
+          "Validation": "1.0.0"
         },
         "runtime": {
           "CommerceFlow.Services.Auth.Application.dll": {}
@@ -234,6 +235,18 @@
             "fileVersion": "1.0.0.0"
           }
         }
+      },
+      "Validation/1.0.0": {
+        "dependencies": {
+          "CommerceFlow.Shared.BuildingBlocks": "1.0.0",
+          "FluentValidation": "12.1.1"
+        },
+        "runtime": {
+          "Validation.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -382,6 +395,11 @@
       "sha512": ""
     },
     "CommerceFlow.Shared.BuildingBlocks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Validation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

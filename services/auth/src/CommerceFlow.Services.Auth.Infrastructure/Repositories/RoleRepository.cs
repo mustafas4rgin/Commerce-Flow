@@ -36,7 +36,7 @@ public class RoleRepository : IRoleRepository
 
         return role;
     }
-    public async Task<Role?> UpdateRoleAsync(Role role, CancellationToken ct = default)
+    public Role? UpdateRole(Role role, CancellationToken ct = default)
     {
         if (role is null || role.Id == default) return null;
 
@@ -46,12 +46,11 @@ public class RoleRepository : IRoleRepository
 
         return role;
     }
-    public async Task<Role?> DeleteRoleAsync(Role role, CancellationToken ct = default)
+    public Role? DeleteRole(Role role, CancellationToken ct = default)
     {
         if (role is null) return null;
 
-        role.IsDeleted = true;
-        role.DeletedAt = DateTime.UtcNow;
+        role.Delete();
 
         return role;
     }

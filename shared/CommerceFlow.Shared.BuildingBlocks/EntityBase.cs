@@ -7,4 +7,12 @@ public class EntityBase
     public DateTimeOffset? UpdatedAt { get; set; }
     public DateTimeOffset? DeletedAt { get; set; }
     public bool IsDeleted { get; set; }
+
+    public void Delete()
+    {
+        if (IsDeleted) return;
+
+        IsDeleted = true;
+        DeletedAt = DateTime.UtcNow;
+    }
 }

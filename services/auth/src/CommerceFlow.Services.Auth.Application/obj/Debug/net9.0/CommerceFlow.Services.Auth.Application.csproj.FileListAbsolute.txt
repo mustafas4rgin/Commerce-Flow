@@ -3,7 +3,9 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/bin/Debug/net9.0/CommerceFlow.Services.Auth.Application.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/bin/Debug/net9.0/Validation.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/bin/Debug/net9.0/Validation.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/obj/Debug/net9.0/CommerceFlow.Services.Auth.Application.csproj.AssemblyReference.cache
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.Application/obj/Debug/net9.0/CommerceFlow.Services.Auth.Application.GeneratedMSBuildEditorConfig.editorconfig

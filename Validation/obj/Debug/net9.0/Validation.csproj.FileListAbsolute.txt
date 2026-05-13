@@ -1,0 +1,16 @@
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/bin/Debug/net9.0/Validation.deps.json
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/bin/Debug/net9.0/Validation.dll
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/bin/Debug/net9.0/Validation.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.dll
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.csproj.AssemblyReference.cache
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.GeneratedMSBuildEditorConfig.editorconfig
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.AssemblyInfoInputs.cache
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.AssemblyInfo.cs
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.csproj.CoreCompileInputs.cache
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.sourcelink.json
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.csproj.Up2Date
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.dll
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/refint/Validation.dll
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/Validation.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/Validation/obj/Debug/net9.0/ref/Validation.dll

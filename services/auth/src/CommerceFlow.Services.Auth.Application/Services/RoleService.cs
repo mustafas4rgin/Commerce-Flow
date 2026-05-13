@@ -5,6 +5,7 @@ using CommerceFlow.Services.Auth.Application.Interfaces;
 using CommerceFlow.Services.Auth.Domain.Contracts;
 using CommerceFlow.Services.Auth.Domain.Entities;
 using CommerceFlow.Shared.Results;
+using CommerceFlow.Shared.Validation.Extensions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -37,11 +38,11 @@ public class RoleService : IRoleService
 
             var roleDtos = _mapper.Map<List<RoleDTO>>(roles);
 
-            var message = roleDtos.Any()
-                ? "Roles listed successfully."
-                : "No roles found.";
+            if (roleDtos.Count == 0) return ServiceResult<List<RoleDTO>>.Fail(
+                ResultStatus.NotFound, 
+                "No roles found.");
 
-            return ServiceResult<List<RoleDTO>>.Ok(roleDtos, message);
+            return ServiceResult<List<RoleDTO>>.Ok(roleDtos, "Roles found");
         }
         catch (Exception ex)
         {
@@ -60,7 +61,9 @@ public class RoleService : IRoleService
             var role = await _roleRepository.GetRoleByIdAsync(id, ct);
 
             if (role is null)
-                return ServiceResult<RoleDTO>.Fail(ResultStatus.NotFound, "There is no role with that id.");
+                return ServiceResult<RoleDTO>.Fail(
+                    ResultStatus.NotFound, 
+                    "There is no role with that id.");
 
             var dto = _mapper.Map<RoleDTO>(role);
 
@@ -80,31 +83,22 @@ public class RoleService : IRoleService
     {
         try
         {
-            var role = await _roleRepository.GetRoleByIdAsync(roleId, ct);
+            var updatingRole = await _roleRepository.GetRoleByIdAsync(roleId, ct);
 
-            if (role is null) return ServiceResult.Fail(ResultStatus.NotFound, $"There is no role with ID : {roleId}");
+            if (updatingRole is null) return ServiceResult.Fail(
+                ResultStatus.NotFound, 
+                $"There is no role with ID : {roleId}");
 
-            _mapper.Map(dto, role);
+            _mapper.Map(dto, updatingRole);
 
-            var validationResult = await _roleValidator.ValidateAsync(role, ct);
+            var validationResult = await _roleValidator.ValidateAsync(updatingRole, ct);
 
-            if (!validationResult.IsValid)
-            {
-                var errors = validationResult.Errors
-                    .Select(x => x.ErrorMessage)
-                    .ToList();
+            if (!validationResult.IsValid) return ValidationResultExtensions.ToServiceResult(validationResult);
 
-                return ServiceResult.Fail(
-                    ResultStatus.ValidationError,
-                    "Validation error.",
-                    errors
-                );
-            }
-
-            if (await _roleRepository.RoleNameExistsAsync(role.Name, roleId, ct))
+            if (await _roleRepository.RoleNameExistsAsync(updatingRole.Name, roleId, ct))
                 return ServiceResult.Fail(ResultStatus.Conflict, "Role with that name already exists.");
 
-            await _roleRepository.UpdateRoleAsync(role, ct);
+            _roleRepository.UpdateRole(updatingRole, ct);
             await _roleRepository.SaveChangesAsync(ct);
 
             return ServiceResult.Ok();
@@ -127,7 +121,7 @@ public class RoleService : IRoleService
 
             if (role is null) return ServiceResult.Fail(ResultStatus.NotFound, "There is no role with that id.");
 
-            await _roleRepository.DeleteRoleAsync(role, ct);
+            _roleRepository.DeleteRole(role, ct);
             await SaveChangesAsync(ct);
 
             return ServiceResult.Ok();
@@ -150,18 +144,7 @@ public class RoleService : IRoleService
 
             var validationResult = await _roleValidator.ValidateAsync(createdRole, ct);
 
-            if (!validationResult.IsValid)
-            {
-                var errors = validationResult.Errors
-                    .Select(x => x.ErrorMessage)
-                    .ToList();
-
-                return ServiceResult.Fail(
-                    ResultStatus.ValidationError,
-                    "Validation error.",
-                    errors
-                );
-            }
+            if (!validationResult.IsValid) return ValidationResultExtensions.ToServiceResult(validationResult);
 
             var existingRole = await _roleRepository.GetRoleByNameAsync(createdRole.Name, ct);
 
