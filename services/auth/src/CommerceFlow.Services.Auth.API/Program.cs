@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using CommerceFlow.Services.Auth.API.Registrations;
 using CommerceFlow.Services.Auth.Application.Profiles;
 using CommerceFlow.Services.Auth.Application.Registrations;
 using CommerceFlow.Services.Auth.Infrastructure;
@@ -18,6 +19,7 @@ builder.Services.AddControllers()
     });
 builder.Services.AddBusinessService();
 builder.Services.AddDataServices(builder.Configuration);
+builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddSwaggerGen(ConfigureSwagger);
 
 
@@ -31,6 +33,8 @@ app.UseSwaggerUI(options =>
 });
 
 app.UseHttpsRedirection();
+
+app.UseAuthorization();
 
 app.MapControllers();
 

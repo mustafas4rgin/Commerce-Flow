@@ -10,6 +10,7 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/FluentValidation.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Humanizer.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.Build.Locator.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.CodeAnalysis.dll
@@ -30,6 +31,8 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Microsoft.OpenApi.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Mono.TextTemplating.dll
@@ -45,6 +48,7 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/System.Composition.Runtime.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/System.Composition.TypedParts.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/System.Diagnostics.DiagnosticSource.dll
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.resources.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.resources.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/es/Microsoft.CodeAnalysis.resources.dll
@@ -116,8 +120,8 @@
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Validation.dll
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Application.pdb
-/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Infrastructure.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Services.Auth.Domain.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/CommerceFlow.Shared.BuildingBlocks.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/bin/Debug/net9.0/Validation.pdb
 /Users/s4rgin/Desktop/Commerce-Flow/services/auth/src/CommerceFlow.Services.Auth.API/obj/Debug/net9.0/CommerceFlow.Services.Auth.API.csproj.AssemblyReference.cache

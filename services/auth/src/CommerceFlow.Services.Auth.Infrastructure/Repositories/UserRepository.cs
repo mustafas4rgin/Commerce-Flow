@@ -17,6 +17,22 @@ public class UserRepository : IUserRepository
     }
     public IQueryable<User> GetUsers(CancellationToken ct = default)
     => _context.Set<User>().AsNoTracking();
+    public async Task<User?> GetUserByEmailOrUserNameAsync(
+    string identifier,
+    CancellationToken ct = default)
+{
+    identifier = identifier.Trim();
+
+    return await _context.Users
+        .Include(u => u.Roles)
+        .FirstOrDefaultAsync(
+            u => !u.IsDeleted &&
+                 (
+                     EF.Functions.ILike(u.Email, identifier) ||
+                     EF.Functions.ILike(u.UserName, identifier)
+                 ),
+            ct);
+}
     public async Task<IEnumerable<User>> GetUsersByLastNameAsync(string lastName, CancellationToken ct = default)
     => await _context.Set<User>().AsNoTracking().Where(u => u.LastName == lastName).ToListAsync(ct);
     public async Task<IEnumerable<User>> GetUsersByFirstNameAsync(string firstName, CancellationToken ct = default)

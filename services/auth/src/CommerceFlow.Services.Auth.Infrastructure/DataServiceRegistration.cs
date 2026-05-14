@@ -1,5 +1,7 @@
 
+using CommerceFlow.Services.Auth.Application.Interfaces;
 using CommerceFlow.Services.Auth.Infrastructure.Contexts;
+using CommerceFlow.Services.Auth.Infrastructure.Security;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,8 @@ public static class DataServiceRegistration
         });
 
         RepositoryRegistrationProvider.RegisterRepositories(services);
+
+        services.AddScoped<ITokenService, TokenService>();
 
         return services;
     }
