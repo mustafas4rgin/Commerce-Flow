@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="../CommerceFlow.Services.Auth.Domain/CommerceFlow.Services.Auth.Domain.csproj" />
     <ProjectReference Include="..\..\..\..\Validation\Validation.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\Constants\Constants.csproj" />
 
   </ItemGroup>
 

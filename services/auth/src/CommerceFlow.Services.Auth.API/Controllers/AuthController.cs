@@ -24,4 +24,28 @@ public sealed class AuthController : BaseApiController
 
         return ToActionResult(result);
     }
+    [HttpPost("register")]
+    public async Task<IActionResult> RegisterAsync(
+        [FromBody] RegisterDTO dto,
+        CancellationToken ct = default
+    )
+    {
+        var result = await _authService.RegisterAsync(dto, ct);
+
+        return ToActionResult(result);
+    }
+    [HttpGet("me")]
+    public async Task<IActionResult> GetMeAsync(
+        CancellationToken ct = default
+    )
+    {
+        var userId = CurrentUserId;
+
+        if (userId is null)
+            return Unauthorized("Invalid token.");
+        
+        var result = await _authService.GetMeAsync(userId.Value, ct);
+
+        return ToActionResult(result);
+    }
 }

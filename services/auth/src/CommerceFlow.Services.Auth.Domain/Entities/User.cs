@@ -11,5 +11,5 @@ public class User : EntityBase
     public byte[] PasswordHash { get; set; } = null!;
     public byte[] PasswordSalt { get; set; } = null!;
     //nav prop
-    public ICollection<Role> Roles { get; set; } = null!;
+    public ICollection<Role> Roles { get; set; } = new List<Role>();
 }

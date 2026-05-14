@@ -1,0 +1,12 @@
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/bin/Debug/net9.0/Constants.deps.json
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/bin/Debug/net9.0/Constants.dll
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/bin/Debug/net9.0/Constants.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/Constants.GeneratedMSBuildEditorConfig.editorconfig
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/Constants.AssemblyInfoInputs.cache
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/Constants.AssemblyInfo.cs
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/Constants.csproj.CoreCompileInputs.cache
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/Constants.sourcelink.json
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/Constants.dll
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/refint/Constants.dll
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/Constants.pdb
+/Users/s4rgin/Desktop/Commerce-Flow/shared/Constants/obj/Debug/net9.0/ref/Constants.dll

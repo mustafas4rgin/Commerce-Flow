@@ -8,4 +8,10 @@ public interface IAuthService
     Task<ServiceResult<AuthResponseDTO>> LoginAsync(
         LoginDTO dto,
         CancellationToken ct = default);
+    Task<ServiceResult<AuthResponseDTO>> RegisterAsync(
+        RegisterDTO dto,
+        CancellationToken ct = default);
+    Task<ServiceResult<MeDTO>> GetMeAsync(
+        int userId,
+        CancellationToken ct = default);
 }

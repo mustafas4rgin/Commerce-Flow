@@ -39,6 +39,10 @@ public class UserRepository : IUserRepository
     => await _context.Set<User>().AsNoTracking().Where(u => u.FirstName == firstName).ToListAsync(ct);
     public async Task<IEnumerable<User>> GetUsersByUserNameAsync(string userName, CancellationToken ct = default)
     => await _context.Set<User>().AsNoTracking().Where(u => u.UserName == userName).ToListAsync(ct);
+    public async Task<User?> GetUserByIdWithRolesAsync(int id, CancellationToken ct = default)
+    => await _context.Set<User>()
+                .Include(u => u.Roles)
+                .FirstOrDefaultAsync(u => u.Id == id);
     public async Task<User?> GetUserByIdAsync(int id, CancellationToken ct = default)
     => await _context.Set<User>().FindAsync(id, ct);
     public async Task<bool> UserExistsByEmailAsync(string email, CancellationToken ct = default)

@@ -1208,6 +1208,7 @@
         "dependencies": {
           "AutoMapper": "16.1.1",
           "CommerceFlow.Services.Auth.Domain": "1.0.0",
+          "Constants": "1.0.0",
           "FluentValidation": "12.1.1",
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "Validation": "1.0.0"
@@ -1260,6 +1261,16 @@
         },
         "runtime": {
           "bin/placeholder/CommerceFlow.Shared.BuildingBlocks.dll": {}
+        }
+      },
+      "Constants/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Constants.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Constants.dll": {}
         }
       },
       "Validation/1.0.0": {
@@ -3787,6 +3798,11 @@
       "type": "project",
       "path": "../../../../shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj",
       "msbuildProject": "../../../../shared/CommerceFlow.Shared.BuildingBlocks/CommerceFlow.Shared.BuildingBlocks.csproj"
+    },
+    "Constants/1.0.0": {
+      "type": "project",
+      "path": "../../../../shared/Constants/Constants.csproj",
+      "msbuildProject": "../../../../shared/Constants/Constants.csproj"
     },
     "Validation/1.0.0": {
       "type": "project",
